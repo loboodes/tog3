@@ -69,20 +69,13 @@
     button:hover { filter: brightness(1.1); }
     .list { display: grid; gap: 10px; margin-top: 12px; }
     .item {
-      display: grid; grid-template-columns: 1fr auto auto;
+      display: grid; grid-template-columns: 1fr auto auto auto;
       gap: 10px; align-items: center;
       background: #0c1529; border: 1px solid #1f2937;
       padding: 10px 12px; border-radius: 10px;
     }
     .badge { padding: 4px 8px; border-radius: 999px; font-size: 12px; border: 1px solid #374151; }
-    .prob {
-      color: var(--warn);
-      font-size: 14px;
-      font-weight: bold;
-      margin-top: 6px;
-      grid-column: 1 / -1; /* يجعلها في سطر مستقل */
-      text-align: center;
-    }
+    .prob { color: var(--warn); }
     .score { color: var(--ok); }
     .actions { display:flex; justify-content:center; margin-top:10px; }
     #export { background: var(--export); }
@@ -110,7 +103,10 @@
     <div>بايرن ميونيخ</div>
   </div>
 
-
+  <div class="meta">
+    <div>ملعب الإمارات، لندن</div>
+    <div>اليوم — 11:00 مساءً بتوقيت مكة/الرياض</div>
+  </div>
   <div class="meta">
     <div>ملعب الإمارات، لندن</div>
     <div>اليوم — 11:00 مساءً بتوقيت مكة/الرياض</div>

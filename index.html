@@ -14,52 +14,34 @@
       --ok: #10b981;
       --warn: #f59e0b;
       --export: #10b981;
-      --clear: #ef4444;
     }
     body {
       font-family: "Tahoma", sans-serif;
-      background: radial-gradient(circle at top, #1e3a8a, #0f172a 70%);
+      background: linear-gradient(120deg, #0f172a, #0b1020 70%);
       color: var(--text);
       margin: 0;
       padding: 24px;
       text-align: center;
     }
-    .logo-top {
-      margin-bottom: 30px;
-      position: relative;
+    .champions-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 20px;
     }
-    .logo-top::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
-      animation: pulse 3s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: translateX(-50%) scale(1); opacity: 0.6; }
-      50% { transform: translateX(-50%) scale(1.2); opacity: 0.3; }
-      100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
-    }
-    .clubs {
+    .teams {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 40px;
+      font-size: 22px;
+      font-weight: bold;
       margin-bottom: 20px;
     }
-    .club {
-      background: var(--card);
-      padding: 14px 16px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    .vs {
+      color: var(--warn);
+      font-size: 26px;
     }
-    .club h2 { margin: 6px 0 0; font-size: 20px; }
-    .vs { font-weight: bold; font-size: 28px; color: var(--accent); }
     .meta {
       display: flex; gap: 12px; flex-wrap: wrap;
       margin: 8px 0 20px; font-size: 14px; color: var(--muted); justify-content:center;
@@ -87,17 +69,23 @@
     button:hover { filter: brightness(1.1); }
     .list { display: grid; gap: 10px; margin-top: 12px; }
     .item {
-      display: grid; grid-template-columns: 1fr auto auto auto;
+      display: grid; grid-template-columns: 1fr auto auto;
       gap: 10px; align-items: center;
       background: #0c1529; border: 1px solid #1f2937;
       padding: 10px 12px; border-radius: 10px;
     }
     .badge { padding: 4px 8px; border-radius: 999px; font-size: 12px; border: 1px solid #374151; }
-    .prob { color: var(--warn); }
+    .prob {
+      color: var(--warn);
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 6px;
+      grid-column: 1 / -1; /* يجعلها في سطر مستقل */
+      text-align: center;
+    }
     .score { color: var(--ok); }
-    .actions { display:flex; gap:8px; justify-content:flex-end; margin-top:10px; }
+    .actions { display:flex; justify-content:center; margin-top:10px; }
     #export { background: var(--export); }
-    #clear { background: var(--clear); }
     footer {
       margin-top: 22px; font-size: 12px; color: var(--muted); text-align: center;
     }
@@ -112,23 +100,15 @@
   </style>
 </head>
 <body>
-<!-- شعار دوري الأبطال في الأعلى -->
-<div 
-  <h4>دوري أبطال أوروبا</h4>
-</div>
+  <!-- اسم البطولة -->
+  <div class="champions-title">🏆 دوري أبطال أوروبا</div>
 
-<!-- شعاري الناديين -->
-<div class="clubs">
-  <div class="club">
-    <h2>أرسنال</h2>
+  <!-- أسماء الفريقين -->
+  <div class="teams">
+    <div>أرسنال</div>
+    <div class="vs">VS</div>
+    <div>بايرن ميونيخ</div>
   </div>
-  <div class="vs">VS</div>
-  <div class="club">
- 
-    <h2>بايرن ميونيخ</h2>
-  </div>
-</div>
-
 
 
   <div class="meta">
